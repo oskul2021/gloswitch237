@@ -1,0 +1,13 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: config_server
+  cloud:
+    config:
+      enabled: false
+      server:
+        git:
+          uri: https://github.com/oskul2021/gloswitch-config-repo.git
+          username: albertlionelmalang@gmail.com
+          password: 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
