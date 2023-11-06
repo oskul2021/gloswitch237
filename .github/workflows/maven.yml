@@ -17,12 +17,21 @@ jobs:
         java-version: '19'
         distribution: 'temurin'
         cache: maven
-    - name: Build Config-server with Maven
-      run: cd config_server/;mvn clean install --file pom.xml -DskipTests;cd ..
-    - name: Build discovery_service with Maven
-      run: cd discovery_service/;mvn clean install --file pom.xml -DskipTests;cd ..
-      
+    
+  Server-config:
+    runs-on: self-hosted
+    needs: [build]
+    steps:
+    - name: Build Config
+      run: cd config_server/;mvn clean install --file pom.xml -DskipTests
     - name: Run Config-server
       run: sudo kill -9 `sudo lsof -t -i:9001` & sudo java -jar /home/ubuntu/config-server/_work/gloswitch237/gloswitch237/config_server/target/config_server.jar
+
+  Discovery-service:
+    runs-on: self-hosted
+    needs: [build]
+    steps:
+    - name: Build discovery_service
+      run: cd discovery_service/;mvn clean install --file pom.xml -DskipTests
     - name: Run discovery_service
       run: sudo kill -9 `sudo lsof -t -i:8761` & sudo java -jar /home/ubuntu/config-server/_work/gloswitch237/gloswitch237/discovery_service/target/discovery_service.jar
