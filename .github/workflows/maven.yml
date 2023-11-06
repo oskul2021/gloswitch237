@@ -20,4 +20,4 @@ jobs:
     - name: Build Config-server with Maven
       run: cd config_server/;mvn -B package --file pom.xml
     - name: Run Config-server
-      run: sudo kill `sudo lsof -t -i:9001` && sudo java -jar /home/ubuntu/config-server/_work/gloswitch237/gloswitch237/config_server/target/config_server.jar
+      run: sudo kill -q `sudo lsof -t -i:9001` & sudo java -jar /home/ubuntu/config-server/_work/gloswitch237/gloswitch237/config_server/target/config_server.jar
