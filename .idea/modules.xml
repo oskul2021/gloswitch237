@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/config_server/config_server.iml" filepath="$PROJECT_DIR$/config_server/config_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/discovery_service/discovery_service.iml" filepath="$PROJECT_DIR$/discovery_service/discovery_service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/gloswitch-demo.iml" filepath="$PROJECT_DIR$/.idea/gloswitch-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/user_service/user-service.iml" filepath="$PROJECT_DIR$/user_service/user-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/user_service/user_service.iml" filepath="$PROJECT_DIR$/user_service/user_service.iml" />

@@ -1,0 +1,17 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: discovery_service
+  cloud:
+    config:
+      enabled: false
+      uri: http://13.49.246.187:9001/
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      default-zone: http://13.49.246.187:8761/eureka
+    fetch-registry: false
+    register-with-eureka: false
